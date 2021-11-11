@@ -1,5 +1,5 @@
 #include "Un-main.h"
-#include"./resources/Encryption/aes_pre.h"
+#include"resource/Encryption/aes_pre.h"
 using namespace std;
 const char* buff = ".WaotoCry";
 
