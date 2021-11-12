@@ -131,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,13 +141,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Anti sendbox.cpp" />
+    <ClCompile Include="Bypass.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="Encryption.cpp" />
+    <ClCompile Include="Funtions.cpp" />
     <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
     <ClInclude Include="Connect.cpp" />
+    <ClInclude Include="resource\Encryption\aes_pre.h" />
+    <ClInclude Include="resource\Encryption\aes_transfer.h" />
+    <ClInclude Include="Un-main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

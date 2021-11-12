@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\resource">
+      <UniqueIdentifier>{6a6b527f-ae8c-4cc1-a0de-74e7324e832e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\resource\Encrytion">
+      <UniqueIdentifier>{bb2390e9-3c27-4a08-a4de-db3490cf68ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="control.cpp">
@@ -24,6 +30,15 @@
     <ClCompile Include="uoload_or_download-function.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Bypass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Funtions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Anti sendbox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h">
@@ -31,6 +46,15 @@
     </ClInclude>
     <ClInclude Include="Connect.cpp">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Un-main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\Encryption\aes_transfer.h">
+      <Filter>头文件\resource\Encrytion</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\Encryption\aes_pre.h">
+      <Filter>头文件\resource\Encrytion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
