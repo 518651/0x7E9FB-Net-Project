@@ -1,8 +1,3 @@
-/*
-开发者：晓鸩 
-开发时间：2020年
-参考博文：https://blog.csdn.net/qq_28205153/article/details/55798628 
-*/
 #include<iostream>
 #include<cstring> 
 
@@ -215,3 +210,4 @@ static void addRoundTowArray(int aArray[4][4],int bArray[4][4]) {
 		for(j = 0; j < 4; j++)
 			aArray[i][j] = aArray[i][j] ^ bArray[i][j];
 }
+
