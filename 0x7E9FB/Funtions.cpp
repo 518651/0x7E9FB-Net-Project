@@ -24,3 +24,8 @@ string password()
 }
 
 
+char new_process_path() {
+	string path = _pgmptr;
+	char new_process = (char)path.c_str();
+	return new_process;
+}

