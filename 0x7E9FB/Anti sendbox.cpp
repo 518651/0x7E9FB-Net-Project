@@ -61,6 +61,19 @@ DWORD get_explorer_processid() {
 		call Address
 		mov hkz, eax
 	}
+	
+	int determine() {
+	DWORD explorer_id = get_explorer_processid();
+	DWORD Parent_id = get_parent_processid(GetCurrentProcessId());
+	if (explorer_id==Parent_id)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
 
 	pe.dwSize = sizeof(PROCESSENTRY32);
 
