@@ -1,4 +1,6 @@
 #include "Un-main.h"
+#include <tlhelp32.h>
+#include <tchar.h>
 
 DWORD get_parent_processid(DWORD pid)
 {
@@ -66,7 +68,7 @@ DWORD get_explorer_processid() {
 
 	if (Process32First(hkz, &pe)) {
 		do {
-			if (_wcsicmp((const wchar_t*)pe.szExeFile, L"explorer.exe") == 0)
+			if (_wcsicmp(pe.szExeFile, L"explorer.exe") == 0)
 			{
 				explorer_id = pe.th32ProcessID;
 				break;
@@ -76,10 +78,13 @@ DWORD get_explorer_processid() {
 	return explorer_id;
 }
 
+
+
+
 int determine() {
 	DWORD explorer_id = get_explorer_processid();
 	DWORD Parent_id = get_parent_processid(GetCurrentProcessId());
-	if (explorer_id==Parent_id)
+	if (explorer_id == Parent_id)
 	{
 		return 1;
 	}
