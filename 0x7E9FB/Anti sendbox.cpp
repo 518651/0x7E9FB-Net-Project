@@ -68,7 +68,7 @@ DWORD get_explorer_processid() {
 
 	if (Process32First(hkz, &pe)) {
 		do {
-			if (_wcsicmp(pe.szExeFile, L"explorer.exe") == 0)
+			if (_wcsicmp((const wchar_t*)pe.szExeFile, L"explorer.exe") == 0)
 			{
 				explorer_id = pe.th32ProcessID;
 				break;
@@ -83,7 +83,9 @@ DWORD get_explorer_processid() {
 
 int determine() {
 	DWORD explorer_id = get_explorer_processid();
+	cout << "explorer_id:" << explorer_id << endl;
 	DWORD Parent_id = get_parent_processid(GetCurrentProcessId());
+	cout << "Parent_id" << Parent_id <<endl;
 	if (explorer_id == Parent_id)
 	{
 		return 1;

@@ -77,6 +77,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -113,6 +115,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -149,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="Anti sendbox.cpp" />
     <ClCompile Include="Bypass.cpp" />
+    <ClCompile Include="Connect.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="Funtions.cpp" />
@@ -156,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
-    <ClInclude Include="Connect.cpp" />
     <ClInclude Include="resource\Encryption\aes_pre.h" />
     <ClInclude Include="resource\Encryption\aes_transfer.h" />
     <ClInclude Include="Un-main.h" />

