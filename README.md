@@ -41,6 +41,40 @@ WAR:请注意若要对函数进行调用或者其他操作*add_double_data*及*B
 > 以上是2021.11.11日的代码
 
 
+----------
+
+
+> 2021.11.12日
+
+	[+]新增功能函数Anti Sendbox反沙箱
+
+	Anti SendBox.cpp中
+		
+	第一步:[函数:Get_Parent_Processid]
+	我调用了CreateToolhelp32Snapshot拍摄进程快照
+		HMODULE hModule = LoadLibrary(_T("Kernel32.dll"));
+		FARPROC Address = GetProcAddress(hModule, "CreateToolhelp32Snapshot");
+	然后使用了汇编语句进行传参
+		_asm{
+		push 0
+		push 2
+		call Address
+		mov hkz, eax
+		}
+	再使用遍历返回父进程
+	
+	第二步写一个和上面差不多的结构获取Explorer.exe的PID[函数:Get_Explorer_process_id()]
+
+	最后我让两者的PID进行对比[函数:determine()]
+	if(Explorer_id==parent_id)
+    如果我的函数在此返回的是--[1]--请各位开发者放行程序，反正请务必终结PROCESS，因为PROCESS已经在被执行逆向工程
+
+	至此反沙箱/OD等逆向工程就写到这里，然后再看实战表现。	
+
+	
+
+
+
 ## 下一步函数功能 ##
 
 > 我在项目创建了一个**Connect.cpp**这个是给你们用于WEB服务器做交互用的
