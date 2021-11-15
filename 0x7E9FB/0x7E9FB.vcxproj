@@ -38,7 +38,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>false</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -155,14 +155,22 @@
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="Encryption.cpp" />
+    <ClCompile Include="file_operation.cpp" />
     <ClCompile Include="Funtions.cpp" />
     <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="resource\Encryption\aes_pre.h" />
     <ClInclude Include="resource\Encryption\aes_transfer.h" />
     <ClInclude Include="Un-main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0x7E9FB-net.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="file\libuv.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
