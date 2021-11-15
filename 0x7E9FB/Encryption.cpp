@@ -10,8 +10,6 @@ const char* buff = ".WaotoCry";
 
 
 
-
-
 int Encryption(char process_path) {
 	int i;
 	int cnt;//计数，每16字符一组

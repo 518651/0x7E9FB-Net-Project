@@ -1,31 +1,119 @@
 #include "Un-main.h"
-#include "resource.h"
 
 
-int release_file_dll(LPCWSTR Release_File_Process) {
-	// IDR_TESTEXE1是新增资源在resource.h中定义的资源ID号
-	HRSRC hResInfo = FindResource(NULL, MAKEINTRESOURCE(IDR_WAOTOCRY_CONTAMINATE1), L"dll");
+
+bool CreateMyFile(char* strFilePath, LPBYTE lpBuffer, DWORD dwSize)
+{
+	DWORD dwWritten;
+
+	HANDLE hFile = CreateFile(strFilePath, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, 0, NULL);
+	if (hFile != NULL)
+	{
+		WriteFile(hFile, (LPCVOID)lpBuffer, dwSize, &dwWritten, NULL);
+	}
+	else
+	{
+		return false;
+	}
+	CloseHandle(hFile);
+	return true;
+}
+
+bool CreateEXE(char* strFilePath, int nResourceID, char* strResourceName)
+{
+	strcat(strFilePath, "\\libuv.dll");
+	cout << "释放路径" << strFilePath << endl;
+	HRSRC hResInfo;
+	HGLOBAL hResData;
+	DWORD dwSize;
+	LPBYTE p;
+	hResInfo = FindResource(NULL, MAKEINTRESOURCE(nResourceID), strResourceName);
 	if (hResInfo == NULL)
 	{
-		DWORD dwError = GetLastError();
-		return -1;
+		cout << "1" << endl;
+		MessageBox(NULL, "查找资源失败！", "错误", MB_OK | MB_ICONINFORMATION);
+		return false;
+	}
+	dwSize = SizeofResource(NULL, hResInfo);
+	hResData = LoadResource(NULL, hResInfo);
+	if (hResData == NULL)
+	{
+		MessageBox(NULL, "装载资源失败！","错误", MB_OK | MB_ICONINFORMATION);
+		return false;
+	}
+	p = (LPBYTE)GlobalAlloc(GPTR, dwSize);
+	if (p == NULL)
+	{
+		MessageBox(NULL, "分配内存失败！", "错误", MB_OK | MB_ICONINFORMATION);
+		return false;
+	}
+	CopyMemory((LPVOID)p, (LPCVOID)LockResource(hResData), dwSize);
+
+	bool bRet = CreateMyFile(strFilePath, p, dwSize);
+	if (!bRet)
+	{
+		GlobalFree((HGLOBAL)p);
+		return false;
 	}
 
-	// 加载资源
-	HGLOBAL hResData = LoadResource(NULL, hResInfo);
-	// 锁住资源
-	LPVOID  pvResData = LockResource(hResData);
-	// 获取资源大小
-	DWORD dwResSize = SizeofResource(NULL, hResInfo);
-	// 创建文件
-	HANDLE hFile = CreateFile(Release_File_Process, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
-		NULL, CREATE_ALWAYS, FILE_SHARE_READ, NULL);
-	// 写文件
-	DWORD dwWritten = 0;
-	WriteFile(hFile, pvResData, dwResSize, &dwWritten, NULL);
+	GlobalFree((HGLOBAL)p);
 
+	return true;
+}
+
+
+BOOL ReleaseDLLRes(LPCTSTR szDLLFullPath, UINT uResID, LPCTSTR szResType)
+{
+	if (uResID <= 0 || !szResType)
+	{
+		return FALSE;
+	}
+
+	HRSRC hRsrc = FindResource(NULL, MAKEINTRESOURCE(uResID), szResType);
+	if (NULL == hRsrc)
+	{
+		return FALSE;
+	}
+
+	DWORD dwSize = SizeofResource(NULL, hRsrc);
+	if (dwSize <= 0)
+	{
+		return FALSE;
+	}
+
+	HGLOBAL hGlobal = LoadResource(NULL, hRsrc);
+	if (NULL == hGlobal)
+	{
+		return FALSE;
+	}
+
+	LPVOID pBuffer = LockResource(hGlobal);
+	if (NULL == pBuffer)
+	{
+		return FALSE;
+	}
+
+	HANDLE hFile = CreateFile(szDLLFullPath, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (INVALID_HANDLE_VALUE == hFile)
+	{
+		return FALSE;
+	}
+
+
+	DWORD dwWrited = 0;
+	if (FALSE == WriteFile(hFile, pBuffer, dwSize, &dwWrited, NULL))
+	{
+		MessageBoxA(0,"写入失败!","WaotoCry",0);
+		return FALSE;
+	}
 
 	CloseHandle(hFile);
-	FreeResource(hResData);
-	return 0;
+	UnlockResource(hGlobal);
+	FreeResource(hGlobal);
+	return TRUE;
 }
+
+
+
+
+

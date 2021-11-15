@@ -12,7 +12,7 @@ int downnload(string usl)
     int nmlen = MultiByteToWideChar(CP_ACP, 0, download_usl.c_str(), len + 1, NULL, 0);
     wchar_t* buffer = new wchar_t[nmlen];
     MultiByteToWideChar(CP_ACP, 0, download_usl.c_str(), len + 1, buffer, nmlen);
-    HRESULT hr = URLDownloadToFile(NULL, buffer, _T("I:\\Project\\C++\\C++_\\0x7E9FB\\Debug\\Config.WaotoCry"), 0, NULL);
+    HRESULT hr = URLDownloadToFile(NULL, (LPCSTR)buffer, _T("I:\\Project\\C++\\C++_\\0x7E9FB\\Debug\\Config.WaotoCry"), 0, NULL);
     if (hr == S_OK)
     {
         return 1;

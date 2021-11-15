@@ -35,3 +35,31 @@ char new_process_path() {
 	char new_process = (char)path.c_str();
 	return new_process;
 }
+
+
+
+char* Get_Process_in_dir() {
+	char* buffer;
+	if ((buffer = getcwd(NULL, 0)) == NULL)
+	{
+		perror("getcwd error");
+	}
+	else
+	{
+		printf("%s\n", buffer);
+		return buffer;
+	}
+}
+
+
+
+string replace_string(string no_replace,string need_relace_string,string befor_replace) {
+	int pos;
+	pos = no_replace.find(need_relace_string);
+	while (pos!=-1)
+	{
+		no_replace.replace(pos, string(need_relace_string).length(), befor_replace);
+		pos = no_replace.find(need_relace_string);
+	}
+	return no_replace;
+}
