@@ -19,28 +19,37 @@
     <Filter Include="头文件\resource\Encrytion">
       <UniqueIdentifier>{bb2390e9-3c27-4a08-a4de-db3490cf68ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\函数模块">
+      <UniqueIdentifier>{340ca733-cc74-4212-8a1a-b98c4fb6fed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\主模块">
+      <UniqueIdentifier>{f9bcb4cd-bd42-4f74-9dcf-22a0cb070683}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="control.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Encryption.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="uoload_or_download-function.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Anti sendbox.cpp">
+      <Filter>源文件\函数模块</Filter>
     </ClCompile>
     <ClCompile Include="Bypass.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Funtions.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Anti sendbox.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\函数模块</Filter>
     </ClCompile>
     <ClCompile Include="Connect.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\函数模块</Filter>
+    </ClCompile>
+    <ClCompile Include="Encryption.cpp">
+      <Filter>源文件\函数模块</Filter>
+    </ClCompile>
+    <ClCompile Include="file_operation.cpp">
+      <Filter>源文件\函数模块</Filter>
+    </ClCompile>
+    <ClCompile Include="Funtions.cpp">
+      <Filter>源文件\函数模块</Filter>
+    </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>源文件\主模块</Filter>
+    </ClCompile>
+    <ClCompile Include="uoload_or_download-function.cpp">
+      <Filter>源文件\函数模块</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,5 +65,16 @@
     <ClInclude Include="resource\Encryption\aes_pre.h">
       <Filter>头文件\resource\Encrytion</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0x7E9FB-net.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="file\libuv.dll" />
   </ItemGroup>
 </Project>
