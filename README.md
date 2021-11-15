@@ -182,6 +182,24 @@ WAR:请注意若要对函数进行调用或者其他操作*add_double_data*及*B
 ----------
 
 2021/11/15 0:01:32 
-> [Attentions重大事件]经过大佬的反馈，WaotoCry进攻模块将从原来的加载图片RGB值Shellcode变为白EXE+黑DLL方式躲开AV的检查
+> [Attention重大事件]经过大佬的反馈，WaotoCry进攻模块将从原来的加载图片RGB值Shellcode变为白EXE+黑DLL方式躲开AV的检查
 	
 	WaotoCry将通过获取QQ进程PID读取路径进行释放DLL动态链接库，对原DLL进行改写,实现对DLL文件劫持。
+
+----------
+> TIME:2021/11/15 16:45:56 
+
+	此次修改了:
+			添加：
+				[+]对于通过PID拿到的PATH路径我写一个拦截规则函数
+					函数定义:string replace_string(string no_replace,string need_relace_string,string befor_replace);
+					调用解析:参数1：需要一个string类型的原字符串，也就是没有更改的字符串 
+							参数2：要对原字符串中什么数据进行规则匹配拦截
+							参数3：拦截成功后你需要对他进行改写的内容是什么
+
+	
+		
+			修改
+				[-]对结构体的内容重新封装，使得调用起来能更好的兼容函数
+				[-]对一些函数的参数统同样进行封装,及宽字节的兼容
+
