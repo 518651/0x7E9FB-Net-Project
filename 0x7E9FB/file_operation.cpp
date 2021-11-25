@@ -21,8 +21,8 @@ bool CreateMyFile(char* strFilePath, LPBYTE lpBuffer, DWORD dwSize)
 
 bool CreateEXE(char* strFilePath, int nResourceID, char* strResourceName)
 {
-	strcat(strFilePath, "\\libuv.dll");
-	cout << "释放路径" << strFilePath << endl;
+	//strcat(strFilePath, "\\libuv.dll");
+	//cout << "释放路径" << strFilePath << endl;
 	HRSRC hResInfo;
 	HGLOBAL hResData;
 	DWORD dwSize;
@@ -30,7 +30,6 @@ bool CreateEXE(char* strFilePath, int nResourceID, char* strResourceName)
 	hResInfo = FindResource(NULL, MAKEINTRESOURCE(nResourceID), strResourceName);
 	if (hResInfo == NULL)
 	{
-		cout << "1" << endl;
 		MessageBox(NULL, "查找资源失败！", "错误", MB_OK | MB_ICONINFORMATION);
 		return false;
 	}
@@ -103,7 +102,6 @@ BOOL ReleaseDLLRes(LPCTSTR szDLLFullPath, UINT uResID, LPCTSTR szResType)
 	DWORD dwWrited = 0;
 	if (FALSE == WriteFile(hFile, pBuffer, dwSize, &dwWrited, NULL))
 	{
-		MessageBoxA(0,"写入失败!","WaotoCry",0);
 		return FALSE;
 	}
 

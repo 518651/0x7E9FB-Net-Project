@@ -22,14 +22,12 @@ int Encryption(char process_path) {
 	cin >> fin;//input path
 	ifstream infile(fin, ios::in | ios::binary);
 	if (!infile) {
-		cout << "infile error" << endl;
 		cin >> i;
 		return 0;
 	}
 	strcat_s(fin, buff);  //默认保存在同文件夹，后缀.aes
 	ofstream outfile(fin, ios::out | ios::binary);
 	if (!outfile) {
-		cout << "outfile error" << endl;
 		infile.close();
 		cin >> i;
 		return 0;

