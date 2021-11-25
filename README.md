@@ -203,3 +203,31 @@ WAR:请注意若要对函数进行调用或者其他操作*add_double_data*及*B
 				[-]对结构体的内容重新封装，使得调用起来能更好的兼容函数
 				[-]对一些函数的参数统同样进行封装,及宽字节的兼容
 
+
+
+----------
+> TIME:2021/11/15 21:50:18  第二代WaotoCry正式完成
+	
+	最后对reanname进行编写后对main函数正式流程编写并封装加入攻击模块
+
+
+
+
+----------
+ 
+> **WaotoCry-TS-2.0.1**[*R3转R0开发，至此代码工程进入内核操作*]
+
+----------
+
+> TIME:2021/11/25 21:41:51 
+
+	开始对WaotoCry第二代进行内核代码编写,WaotoCry将从单文件的Release DLL attack转为分化母体PROCESS!
+	此次更新为:WaotoCry 2.0.1版
+	新增[HIDE PROCESS]函数，可让当前WaotoCry通过断开链表的方式躲过USER的初级检测，因为要保证整个框架，函数当只能完成对Taskmgr.exe隐藏，
+	对于PROCESS HACHER及其他进程检测没有加入。后期在考虑是否进行改进.
+	
+	USE:hide_process funtion
+	hide_process(string process_name);
+	
+	传入需要隐藏的进程名即可;
+		
