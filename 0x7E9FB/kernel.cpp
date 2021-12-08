@@ -103,3 +103,4 @@ int hide_process(string process) {
 	);
 	return 0;
 }
+

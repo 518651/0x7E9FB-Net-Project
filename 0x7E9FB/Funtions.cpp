@@ -9,7 +9,6 @@ string password()
 
 	char chr[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'A', 'B', 'C', 'D', 'E', 'F' };
-
 	srand(time(NULL));
 	string strResult;
 	char buf[10] = { 0 };
@@ -91,4 +90,41 @@ char Getsystemtamppath() {
 	string temppath;
 	GetTempPath(sizeof(strtmapath), strtmapath);
 	return *strtmapath;
+}
+
+//! 获取用户名
+string windows_username() {
+	char user_name[256];
+	DWORD dwuser_name = 256;
+	GetUserNameA(user_name, &dwuser_name);
+	return user_name;
+}
+
+//! 获取计算机名
+wstring windows_computer_name() {
+	DWORD computername_address = 0;
+	wstring computername_p;
+	GetComputerName(NULL, &computername_address);
+	wchar_t* name = new wchar_t[computername_address];
+	if (GetComputerName((LPSTR)name, &computername_address))
+	{
+		computername_p = name;
+	}
+	delete[]name;
+	return computername_p;
+}
+
+
+
+//! establish catalogue
+bool windows_text(string eatablish_path) {
+	mkdir(eatablish_path.c_str());
+	if (mkdir)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

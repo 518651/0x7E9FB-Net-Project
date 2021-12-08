@@ -161,6 +161,9 @@
     <ClCompile Include="hand file\r77\r77 hand\Install.cpp" />
     <ClCompile Include="hand file\r77\r77 hand\r77api.cpp" />
     <ClCompile Include="kernel.cpp" />
+    <ClCompile Include="Process Police.cpp" />
+    <ClCompile Include="search_regedit_information.cpp" />
+    <ClCompile Include="Socket_Tcp_Server.cpp" />
     <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
