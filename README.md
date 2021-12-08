@@ -1,11 +1,16 @@
 # Walcome To 0x7E9FB Team Project #
-![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/1195096017.jpeg)
+![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/Team.jpg)
 *项目的名字我暂时没有想好，你们可以去想想*
 
 > 写在开头
-	 此项目为私人项目且非恶意程序,请各位开发者们遵守《中华人民共和国网络安全法》,全项目不能拥有主动嗅探、漏洞攻击代码.在封装成品时必须附带回溯项目，以便让配置文件复位.如果此项目
-	 被设置成公开状态将高危函数及项目依赖文件全部删除.
 	
+	我们暂时没对PROCESS定型，个人觉得可能算是：
+	
+	PROCESS NAME:暂定WaotoCry
+	PROCESS类型:感染性木马程序
+	数据交互渠道:WEB、Socket、TCP、UDP、HTTP
+	功能：文件上传\下载,开启Socket5,主机通讯,可能会有文件加密，整个看团队怎么说了
+	自毁模块[一旦木马无法与主控联系上便执行自毁]
 
 
 现在是2021/11/12 1:47:07 我已经对项目完成:
@@ -301,3 +306,16 @@ tcp_local
 	1. 名称--WaotoCry_hide_process(隐藏指定的目录下的进程)
 	2. 数据类型为--REG_SZ
 	3. 数值--C:\Process File(X86)\^Waoto_ep.exe
+
+
+
+----------
+
+> TIME:2021/12/8 3:06:32 
+
+	此次新增函数:
+	AES对于数据的加密、解密
+	查询设备重要部件型号:CPU\GPU
+	添加Sokcet客服端通讯代码
+
+	后期添加对于自身的进程保护及R0环通讯代码
