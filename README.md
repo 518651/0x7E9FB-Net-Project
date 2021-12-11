@@ -1,25 +1,11 @@
-
-![F1](https://img.shields.io/badge/0X7E9FB-WaotoCry--Tojro--horse-yellow)
-![F2](https://img.shields.io/discord/915560176906551346)
-![F3](https://img.shields.io/github/languages/code-size/518651/0x7E9FB-Net-Project)
-![f4](https://img.shields.io/github/last-commit/518651/0x7E9FB-Net-Project)
-![F5](https://img.shields.io/appveyor/build/518651/0x7E9FB-Net-Project)
-
-![index](https://github.com/518651/0x7E9FB-Net-Project/blob/master/WaotoCry.png)
-
 # Walcome To 0x7E9FB Team Project #
-![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/1195096017.jpeg)
+![FI](https://github.com/518651/0x7E9FB-Net-Project/blob/master/WaotoCry.png)
 *项目的名字我暂时没有想好，你们可以去想想*
 
 > 写在开头
-	
-	我们暂时没对PROCESS定型，个人觉得可能算是：
-	
-	PROCESS NAME:暂定WaotoCry
-	PROCESS类型:感染性木马程序
-	数据交互渠道:WEB、Socket、TCP、UDP、HTTP
-	功能：文件上传\下载,开启Socket5,主机通讯,可能会有文件加密，整个看团队怎么说了
-	自毁模块[一旦木马无法与主控联系上便执行自毁]
+		
+	Attention:
+	 本项目按原样提供，不提供任何保证。作者及其开发团队不对使用本项目可能造成的任何直接或间接伤害负责。您需要自行承担使用此项目的风险。
 
 
 现在是2021/11/12 1:47:07 我已经对项目完成:
@@ -328,3 +314,22 @@ tcp_local
 	添加Sokcet客服端通讯代码
 
 	后期添加对于自身的进程保护及R0环通讯代码
+
+
+----------
+
+
+> 开发日志:受到Log4j2 0day 的启发,本想对WaotoCry attack模块进行转型，但是在尝试对[Stsyem32]目录下dxgi.dll进行劫持的时候受到TrustedInstaller权限的阻挠,暂时停止对系统目录的劫持,择日选择一个新的劫持目标
+
+	[新增函数:encrypt_vigenere,extend_key,drcryt_vigenere]
+
+	
+函数调用:
+	
+	encrypt_vigenere(待加密的数据,你的公钥);//加密
+
+	extend_key(加密后的密文,公钥);//解密密钥生成
+
+	decrypt_vigenere(加密后的密文,解密密钥); //解密
+
+	![](https://github.com/518651/0x7E9FB-Net-Project/blob/master/img/2NW%25%601JYAR2408%5B6U5%246EQP.png)
