@@ -68,12 +68,12 @@ string replace_string(string no_replace,string need_relace_string,string befor_r
 
 //Modify FILE NAME 
 int reaname(char *old_name,char *new_name) {
-	char *moudle;
+	char* moudle;
 	string moudle_1;
-	strcat(old_name,"\\libuv.dll");
-	moudle_1 =replace_string(old_name, "libuv.dll", "libuvOrg.dll");
+	strcat(old_name, "\\QCK.dll");
+	moudle_1 = replace_string(old_name, "QCK.dll", "dxgi-1.dll");
 	moudle = (char*)moudle_1.c_str();
-	if (!rename((const char*)old_name, (const char* )moudle))
+	if (!rename((const char*)old_name, (const char*)moudle))
 	{
 		return 1;
 	}

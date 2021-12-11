@@ -159,6 +159,9 @@
     <None Include="hand file\r77\exe file\InstallStager.exe">
       <Filter>资源文件\hide System Porject</Filter>
     </None>
+    <None Include="file\dxgi.dll">
+      <Filter>资源文件\Attack</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="resource\内核\libMinHook.x64.lib">

