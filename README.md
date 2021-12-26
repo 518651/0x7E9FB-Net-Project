@@ -5,7 +5,10 @@
 > 写在开头
 		
 	Attention:
-	 本项目按原样提供，不提供任何保证。作者及其开发团队不对使用本项目可能造成的任何直接或间接伤害负责。您需要自行承担使用此项目的风险。
+	本文最终解释权归本项目开发者所有！！！
+	由于传播、利用此文所提供的信息而造成的任何直接或者间接的后果及损失，均由使用者本人负责，开发者不为此承担任何责任。
+
+一切法律后果均由攻击者承担！！！
 
 
 现在是2021/11/12 1:47:07 我已经对项目完成:
@@ -331,7 +334,13 @@ tcp_local
 	extend_key(加密后的密文,公钥);//解密密钥生成
 
 	decrypt_vigenere(加密后的密文,解密密钥); //解密
-	
-	
 
-![](https://github.com/518651/0x7E9FB-Net-Project/blob/master/img/2NW%25%601JYAR2408%5B6U5%246EQP.png)
+	![](https://github.com/518651/0x7E9FB-Net-Project/blob/master/img/2NW%25%601JYAR2408%5B6U5%246EQP.png)
+
+
+----------
+TIME:2021/12/26 2:52:44 
+
+抽了点时间更新WaotoCry项目,这次更新了TCP/UDP洪水饱和+C&C加密混淆通讯
+
+![](https://github.com/518651/0x7E9FB-Net-Project/tree/master/img/0EW91KDR1_O$BXDBWP(`8%Y.png)
