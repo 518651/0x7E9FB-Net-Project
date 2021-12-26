@@ -1,7 +1,7 @@
 #include "Install.h"
+#include "../../../Un-main.h"
 
 
-//int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 int InstallR77()
 {
 	InitializeApi(INITIALIZE_API_SRAND);
