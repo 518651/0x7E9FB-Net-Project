@@ -117,7 +117,7 @@ wstring windows_computer_name() {
 
 
 //! establish catalogue
-bool windows_text(string eatablish_path) {
+bool windows_dir(string eatablish_path) {
 	mkdir(eatablish_path.c_str());
 	if (mkdir)
 	{

@@ -32,10 +32,10 @@ WCHAR search_regedit_CPU_information() {
 	if (::RegQueryValueEx(key, TEXT("ProcessorNameString"), 0, &dwType, (LPBYTE)CPU_information, &dwSize) == ERROR_SUCCESS)
 	{
 		//return error_word;
-		printf("read success\n");
-		printf("%s\n", CPU_information);
+		/*printf("read success\n");
+		printf("%s\n", CPU_information);*/
 		strcat((char*)cpu_information.c_str(), (char*)CPU_information);
-		cout << "STRING--->" << cpu_information << endl;
+		//cout << "STRING--->" << cpu_information << endl;
 		return (WCHAR)CPU_information;
 	}
 }

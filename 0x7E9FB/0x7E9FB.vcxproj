@@ -109,6 +109,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,20 +158,24 @@
     <ClCompile Include="control.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="file_operation.cpp" />
+    <ClCompile Include="Flood.cpp" />
     <ClCompile Include="Funtions.cpp" />
+    <ClCompile Include="hand file\Encoding\URLEncoding.cpp" />
     <ClCompile Include="hand file\r77\r77 hand\Install.cpp" />
     <ClCompile Include="hand file\r77\r77 hand\r77api.cpp" />
+    <ClCompile Include="hand file\Socket\Sockets.cpp" />
     <ClCompile Include="kernel.cpp" />
-    <ClCompile Include="Process Police.cpp" />
     <ClCompile Include="search_regedit_information.cpp" />
     <ClCompile Include="Socket_Tcp_Server.cpp" />
     <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
+    <ClInclude Include="hand file\Encoding\URLEncoding.h" />
     <ClInclude Include="hand file\r77\r77 hand\Install.h" />
     <ClInclude Include="hand file\r77\r77 hand\ntdll.h" />
     <ClInclude Include="hand file\r77\r77 hand\r77api.h" />
+    <ClInclude Include="hand file\Socket\Sockets.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource\Encryption\aes_pre.h" />
     <ClInclude Include="resource\Encryption\aes_transfer.h" />
