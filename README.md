@@ -343,4 +343,5 @@ TIME:2021/12/26 2:52:44
 
 抽了点时间更新WaotoCry项目,这次更新了TCP/UDP洪水饱和+C&C加密混淆通讯
 
-![](https://github.com/518651/0x7E9FB-Net-Project/tree/master/img/0EW91KDR1_O$BXDBWP(`8%Y.png)
+
+![F22](https://github.com/518651/0x7E9FB-Net-Project/tree/master/img/0EW91KDR1_O$BXDBWP(`8%Y.png)
