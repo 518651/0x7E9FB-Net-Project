@@ -1,0 +1,12 @@
+﻿  Bypass.cpp
+I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(4,6): warning C4101: “serach_number”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(23,8): warning C4101: “dwDisposition”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(60,7): warning C4101: “hKey”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(72,7): warning C4101: “hKey”: 未引用的局部变量
+  control.cpp
+  正在生成代码
+  2 of 691 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  0x7E9FB.vcxproj -> I:\Project\C++\C++_\0x7E9FB\Release\WaotoCry.exe
