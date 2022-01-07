@@ -1,0 +1,17 @@
+﻿  TCP Server.cpp
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(59,26): warning C4018: “<”: 有符号/无符号不匹配
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(23,11): warning C4101: “timeFile”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(172,11): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“WCHAR *”
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(172,11): message : 请考虑在格式字符串中使用“%ls”
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(172,11): message : 请考虑在格式字符串中使用“%lls”
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(172,11): message : 请考虑在格式字符串中使用“%Ls”
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(172,11): message : 请考虑在格式字符串中使用“%ws”
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(182,8): warning C4101: “dwDisposition”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(179,6): warning C4101: “serach_number”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(203,8): warning C4101: “dwDisposition”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB\TCP Server\TCP Server.cpp(200,6): warning C4101: “serach_number”: 未引用的局部变量
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 582 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  TCP Server.vcxproj -> I:\Project\C++\C++_\0x7E9FB\Release\TCP Server.exe

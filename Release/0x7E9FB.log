@@ -1,12 +1,24 @@
-﻿  Bypass.cpp
-I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(4,6): warning C4101: “serach_number”: 未引用的局部变量
-I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(23,8): warning C4101: “dwDisposition”: 未引用的局部变量
-I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(60,7): warning C4101: “hKey”: 未引用的局部变量
-I:\Project\C++\C++_\0x7E9FB\0x7E9FB\Bypass.cpp(72,7): warning C4101: “hKey”: 未引用的局部变量
+﻿  Anti sendbox.cpp
+  Bypass.cpp
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Bypass.cpp(4,6): warning C4101: “serach_number”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Bypass.cpp(24,8): warning C4101: “dwDisposition”: 未引用的局部变量
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Bypass.cpp(61,7): warning C4101: “hKey”: 未引用的局部变量
+  Connect.cpp
   control.cpp
+  Encryption.cpp
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\resource\Encryption\aes_pre.h(56,14): warning C4838: 从“unsigned int”转换到“const int”需要收缩转换
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Encryption.cpp(20,18): warning C4101: “fout”: 未引用的局部变量
+  file_operation.cpp
+  Funtions.cpp
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Funtions.cpp(13,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Funtions.cpp(38,26): warning C4302: “类型强制转换”: 从“char *”到“char”截断
+  Install.cpp
+  r77api.cpp
+  kernel.cpp
+  uoload_or_download-function.cpp
   正在生成代码
-  2 of 691 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\0x7E9FB\Funtions.cpp(54): warning C4715: “Get_Process_in_dir”: 不是所有的控件路径都返回值
+  All 549 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
-  0x7E9FB.vcxproj -> I:\Project\C++\C++_\0x7E9FB\Release\WaotoCry.exe
+  0x7E9FB.vcxproj -> I:\Project\C++\C++_\0x7E9FB_WaotoCry\0x7E9FB\Release\WaotoCry.exe
