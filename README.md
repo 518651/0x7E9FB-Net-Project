@@ -347,3 +347,33 @@ TIME:2021/12/26 2:52:44
 
 
 ![](https://github.com/518651/0x7E9FB-Net-Project/blob/master/img/20211226030540.png)
+
+
+----------
+TIME:2022/1/8 00:53:36
+
+和GITBOY商议后续开发事宜后，我们决定暂时对WaotoCry.Beta v2 构建从开发转向后续维护更新,并同时筹备Beta V3架构开发工作,由于在线开发者无法到达预期的效果
+,所以正在开始构建V3之前我们需要对团队进行一次大型扩充,招纳相关Red Team兴趣的伯乐一起开发WaotoCry.Beta v3工程.
+
+	About WaotoCry.Beta V3 Someting
+
+	Kerlen:	
+	开发组一直认为WaotoCry.Beta V2版本的Kerlen相关工作没有实质性的推进.至今都是R3调R0 API.对于真正的HOOK Code没有任何编写.所以WaotoCry.Beta V3开发中将
+	注重对Kernel的组件开发.
+
+	Code Confusion:
+	长期的逆向样本中,我们发现代码混淆技术对于躲避IDA等逆向手段有着强大的优势,这一点将纳入WaotoCry.Beta V3工程中.
+
+	Avoidance Yara Rules:
+	Yara规则毋庸置疑是现Anti VIRUS PROCESS/MANUFACTURER对于FILE 是否为恶意重要判定规则.WaotoCry.Beta V2中对此没有做太大修改，导致多次命中规则.在V3版本
+	中会进行Anti YARA开发.
+
+	WaotoCry Watchdog:
+	若想要对WaotoCry在实验中长期生存维持权限,则需要一个"看门狗"用于周期性检测WaotoCry是否在正常运行\文件是否还在本地.若上述事件发生将重新拉起WaotoCry线程
+	or 重新Release WaotoCry File.
+	
+	Attack: 
+	V2中shellcode位于DLL文件中,其使用MSF一重生成,AV检测恶意成功率非常高,所以暂时定为对Shellcode模块在执行前进行异或加密,破坏生成特征,提高存活率.进入SRAM中
+	则再开始与或成原Shellcode.
+
+	
