@@ -30,20 +30,20 @@ bool CreateEXE(char* strFilePath, int nResourceID, char* strResourceName)
 	hResInfo = FindResource(NULL, MAKEINTRESOURCE(nResourceID), strResourceName);
 	if (hResInfo == NULL)
 	{
-		MessageBox(NULL, "查找资源失败！", "错误", MB_OK | MB_ICONINFORMATION);
+		//MessageBox(NULL, "查找资源失败！", "错误", MB_OK | MB_ICONINFORMATION);
 		return false;
 	}
 	dwSize = SizeofResource(NULL, hResInfo);
 	hResData = LoadResource(NULL, hResInfo);
 	if (hResData == NULL)
 	{
-		MessageBox(NULL, "装载资源失败！","错误", MB_OK | MB_ICONINFORMATION);
+		//MessageBox(NULL, "装载资源失败！","错误", MB_OK | MB_ICONINFORMATION);
 		return false;
 	}
 	p = (LPBYTE)GlobalAlloc(GPTR, dwSize);
 	if (p == NULL)
 	{
-		MessageBox(NULL, "分配内存失败！", "错误", MB_OK | MB_ICONINFORMATION);
+		//MessageBox(NULL, "分配内存失败！", "错误", MB_OK | MB_ICONINFORMATION);
 		return false;
 	}
 	CopyMemory((LPVOID)p, (LPCVOID)LockResource(hResData), dwSize);

